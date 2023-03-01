@@ -1,0 +1,106 @@
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--Dark-theme);
+  overflow: hidden;
+}
+:root{
+  --Dark-theme: #212121;
+}
+.buttons{
+  display: none;
+}
+.on{
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  margin: 0 auto;
+  width: 24px;
+  height: 24px;
+  background-color: #ABFF00;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px;
+}
+.off{
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  margin: 0 auto;
+  width: 24px;
+  height: 24px;
+  background-color: #F00;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #441313 0 -1px 9px, rgba(255, 0, 0, 0.5) 0 2px 12px;
+}
+p{
+  background-color: white;
+  color: black;
+  position: absolute;
+  bottom: 0;
+}
+.subtitle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bot-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  animation-name: moving;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  overflow: hidden;
+}
+.bot-container img{
+  height: 400px;
+  overflow: hidden;
+}
+@keyframes moving {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+    50% { transform: translate(0px, 12px) rotate(0deg); }
+    100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+#talkbubble {
+  width: 160px; 
+  height: 80px;
+  background: white;
+  position: relative;
+  border-radius: 10px;
+  margin-left:20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#talkbubble:before {
+  content: "";
+  position: absolute;
+  right: 100%; 
+  top: 26px;
+  border-top: 13px solid transparent;
+  border-right: 26px solid white;
+  border-bottom: 13px solid transparent;
+}
+.bubblecontainer{
+  position: absolute;
+  top: 20%;
+  right: 10px;
+  min-width: 600px;
+}
+@media only screen and (max-width: 600px) {
+  body{
+    overflow: hidden;
+  }
+.bubblecontainer{
+  position: absolute;
+  top: 20%;
+  left: 60%;
+  width: 100%;
+}
+.container{
+  overflow: hidden;
+}
+}
